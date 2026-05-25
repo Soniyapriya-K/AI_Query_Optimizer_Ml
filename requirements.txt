@@ -1,0 +1,6 @@
+flask
+sqlparse
+pandas
+numpy
+scikit-learn
+joblib
