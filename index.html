@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>AI Query Optimizer</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>AI-Powered Database Query Optimizer</h1>
+
+    <form method="POST">
+
+        <textarea name="query"
+                  placeholder="Enter SQL Query"></textarea>
+
+        <button type="submit">
+            Analyze Query
+        </button>
+
+    </form>
+
+    {% if result %}
+
+    <div class="card">
+
+        <h2>Original Query</h2>
+
+        <pre>{{ result.original_query }}</pre>
+
+        <h2>Optimized Query</h2>
+
+        <pre>{{ result.optimized_query }}</pre>
+
+        <h2>ML Prediction</h2>
+
+        <p>{{ result.prediction }}</p>
+
+        <h2>Performance Score</h2>
+
+        <p>{{ result.score }}/100</p>
+
+        <h2>Suggestions</h2>
+
+        <ul>
+
+            {% for s in result.suggestions %}
+
+                <li>{{ s }}</li>
+
+            {% endfor %}
+
+        </ul>
+
+    </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+
+</html>
